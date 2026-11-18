@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Currency Converter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <button id="historyBtn" class="btn-small">History</button>
+    <button id="themeBtn" class="btn-small">Dark mode</button>
+  </header>
+
+  <main class="card">
+    <h1>Currency Converter</h1>
+    <p class="subtitle">Enter amount and select currencies</p>
+
+    <label for="from">From:</label>
+    <select id="from"></select>
+
+    <button id="swapBtn" class="swap" aria-label="Swap currencies">⇅</button>
+
+    <label for="to">To:</label>
+    <select id="to"></select>
+
+    <label for="amount">Amount:</label>
+    <input id="amount" type="number" inputmode="decimal" min="0" placeholder="Enter amount">
+
+    <button id="convertBtn" class="btn-main">Convert</button>
+
+    <div class="result" aria-live="polite">
+      <p>Converted: <strong id="converted">—</strong></p>
+      <p>Rate: <span id="rate">—</span></p>
+      <p id="error" class="error"></p>
+    </div>
+  </main>
+
+  <aside id="historyPanel" class="history" hidden>
+    <div class="history-head">
+      <h2>History</h2>
+      <button id="clearBtn" class="btn-small">Clear</button>
+      <button id="closeBtn" class="btn-small">Close</button>
+    </div>
+    <ul id="historyList"></ul>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
